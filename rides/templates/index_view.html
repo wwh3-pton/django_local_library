@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main"> 
+<table>
+<style>
+      table,
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+      <tr>
+	<th> Name </th>
+	<th> Origin </th>
+	<th> Destination City </th>
+	<th> Destination State </th>
+	<th> Date </th>
+	<th> Time </th>
+  <th> Age </th>
+	<th> Taking Pets? </th>
+	<th> # Passengers? </th>
+      </tr>
+      {% for person in people %}
+      <tr>
+          <td>{{ person.first_name }}</td> 
+          <td>{{ person.origination }}</td>
+          <td>{{ person.destination_city }}</td> 
+          <td>{{ person.destination_state }}</td> 
+          <td>{{ person.date }}</td> 
+          <td>{{ person.time }}</td> 
+          <td>{{ person.age }} </td>
+          <td>{{ person.pets }}</td>
+          <td>{{ person.seats_available }}</td> 
+      </tr>
+      {% endfor %} 
+  </table>
+</div> 
+
+<form action="{% url 'rides:index' %}" method="get">
+    {{ form }}
+    <input type="submit" value="Submit" onclick="return checkForm(this.parentNode);">
+</form>
+<h1>Not seeing what you want?</h1>
+<h2><a href="http://127.0.0.1:8000/rides/create" style="font-size: 30px; font-style: italic;">Create A Ride Here!</a></h2>
+
+{% endblock %}

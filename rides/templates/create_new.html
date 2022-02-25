@@ -1,0 +1,48 @@
+
+
+<center>
+{% block content %}
+    <h1 style="font-size:60px;font-family:Comic Sans MS"> Carpool </h1>
+    <h2 style="font-size:30px"> carpool.com </h2>
+    <h3> Don't be a tool, ride in a carpool </h3>
+    <h4 style="font-size:60px">Enter Ride Info Here:</h4>
+
+    <form action="{% url 'rides:create' %}" method="post">
+        {% csrf_token %} 
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td>{{ new_ride_form.first_name }}</td>
+            </tr><tr>  
+                <td>Origin City</td>
+                <td>{{ new_ride_form.origination }}</td>
+            </tr><tr>
+                <td>Destination City</td>
+                <td>{{ new_ride_form.destination_city }}</td>
+            </tr><tr>
+                <td>Destination State</td>
+                <td>{{ new_ride_form.destination_state }}</td>
+            </tr><tr>
+                <td>Date</td>
+                <td>{{ new_ride_form.date }}</td>
+            </tr><tr>
+                <td>Time</td>
+                <td>{{ new_ride_form.time }}</td>
+            </tr><tr>
+                <td>Age</td>
+                <td>{{ new_ride_form.age }}</td>
+            </tr><tr>
+                <td>Pets</td>
+                <td>{{ new_ride_form.pets }}</td>
+            </tr><tr>
+                <td>Seats Available</td>
+                <td>{{ new_ride_form.seats_available }}</td>
+            </tr>
+        </table>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    {% endblock %}
+
+</center>

@@ -1,0 +1,21 @@
+
+h1 {
+  color: black;
+}
+
+img {
+  transition-duration: 2s;
+}
+
+img:hover {
+  transform: scaleY(-1);
+  transition-duration: 3s;
+}
+
+.odd {
+  background-color: #EEEEEE;
+}
+
+.odd td {
+  outline: 1px solid #EEEEEE;
+}

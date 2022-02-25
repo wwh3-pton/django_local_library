@@ -1,0 +1,20 @@
+{% load static %}
+
+<html>
+<head>
+    <script src="{% static 'main.js' %}"></script>
+     <link rel="stylesheet" href="{% static 'main.css' %}"/>
+</head>
+<title> ORF 401: Spring 2020 </title>
+<body bgcolor="white" text="black" onload="splash();">
+    <center>
+      <h1 style="font-size:60px;font-family:Comic Sans MS"> Carpool </h1>
+      <h2 style="font-size:30px"> carpool.com </h2>
+      <h3> Don't be a tool, ride in a carpool </h3>
+      <img src="{% static 'logo1.jpg' %}" alt="Image of logo">
+
+      {% block content %}
+      {% endblock %}
+    </center>
+  </body>
+</html>
